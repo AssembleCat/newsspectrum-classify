@@ -8,4 +8,9 @@ candidate_labels = ['Abortion', 'Economic Policy', 'Education Policy', 'Environm
 
 
 def find_category(target_sequence):
-    return classifier(target_sequence, candidate_labels, multi_label=True)
+    results = []
+    for single_sequence in target_sequence:
+        result = classifier(single_sequence, candidate_labels, multi_label=True)
+        results.append(result)
+    return results
+
